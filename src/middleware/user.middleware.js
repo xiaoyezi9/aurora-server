@@ -2,7 +2,7 @@
  * @Author: 爱吃香菜的猹
  * @Date: 2022-11-18 21:08:50
  * @LastEditors: 爱吃香菜的猹
- * @LastEditTime: 2022-11-19 13:58:03
+ * @LastEditTime: 2022-11-25 20:51:27
  * @FilePath: \Aurora-server\src\middleware\user.middleware.js
  * @Description: 用户请求中间件 
  */
@@ -13,6 +13,7 @@ const service = require('../service/user.service')
 const verifyUser = async (ctx, next) => {
    //获取用户名和密码
    const { name, password } = ctx.request.body
+   console.log(name,password);
    //判断用户名或密码不能为空
    if (!name || !password) {
       const error = new Error(errorType.NAME_OR_PASSWORD_IS_REQUIRED)
